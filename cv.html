@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylescv.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+    <title>Proyecto CV</title>
+</head>
+<script type="text/javascript">
+    function showDetails(){
+      var details = document.getElementById('Información');
+      if(details.style.display == "none"){
+        details.style.display = "block";
+      } else {
+        details.style.display = "none";
+      }
+    }
+    function Showcontenedor(){
+      var contenedor= document.getElementById('contenedor');
+      if(contenedor.style.display == "none"){
+        contenedor.style.display = "grid";
+      } else {
+        contenedor.style.display = "none";
+      }
+    }
+    function Showbotonfincv(){
+      var contenedor= document.getElementById('botonfincv');
+      if(contenedor.style.display == "none"){
+        contenedor.style.display = "flex";
+      } else {
+        contenedor.style.display = "none";
+      }
+    }
+    function Hideform(){
+      var formulario= document.getElementById('formulario');
+      if(formulario.style.display == "block"){
+        formulario.style.display = "none";
+      } else {
+        formulario.style.display = "block";
+      }
+    }
+   </script>
+<body>
+    <div id="formulario" style="display: block;">
+    <form>
+        <h2>Bienvenido</h2><br><h3>Complete el siguiente formulario para obtener su modelo de CV</h3><br>
+        <label>Nombre y Apellido</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre" required ><br>
+        <hr>
+        <label>E-mail</label>
+        <input type="email" id="email" placeholder="Ingrese su e-mail" required><br>
+        <hr>
+        <label>Fecha de nacimiento</label>
+        <input type="date" id="fechanacimiento"  required pattern="\d{4}-\d{2}-\d{2}"><br> 
+        <hr>
+        <label>Numero de telefono</label>
+        <input type="number" id="numerotelefono" placeholder="Ingrese su numero de telefono" required><br>
+        <hr>
+        <label>Localidad</label>
+        <input type="text" id="localidad" placeholder="Ingrese su localidad" required>
+        <hr>
+        <label>Estudios primarios</label>
+        <input type="text" id="estudiosprimarios" placeholder="Ingrese eduacion primaria" required><br>
+        <hr>
+        <label>Estudios secundarios</label>
+        <input type="text" id="estudiossecundarios" placeholder="Ingrese eduacion secundaria" required><br>
+        <hr>
+        <label>Estudios terc/univ/cursos</label>
+        <input type="text" id="estudiosextras" placeholder="Ingrese formación complementaria" required><br>
+        <hr>
+        <label>Experiencia laboral</label>
+        <input type="text" id="experienciatrabajo" placeholder="Ingrese experiencia laboral" required><br>
+        <hr>
+        <label>Aptitudes</label>
+        <input type="text" id="aptitudes" placeholder="Ingrese sus aptitudes" required><br>
+        <hr>
+        <label>Imagen de perfil</label>
+        <input type="file" id="seleccionArchivos" accept="image/*"><br>
+        <hr>
+        <input type="button" value="Enviar" id="botonenviar"  onclick="Showcontenedor()+Hideform()+Showbotonfincv()" /><br /><br />
+      </div>
+    </form>
+    <div class="contenedor" id="contenedor" style="display:none">
+        <div class="lado-izquierdo">
+            <div class="textoperfil">
+                <h2 id='nombreapellido'></h2>
+                <div class="imagen">
+                    <img id="imagenPrevisualizacion" class="imagen" id="imagen">
+                </div>
+            </div>
+                <div class="contenedorinfo">
+                    <ul><h3><u>Información</u></h3>
+                    <li><span><h5>📱Número de telefono: </h5><span id="infotelefono"></span></span></li>
+                    <li><span><h5>📧Correo electrónico: </h5><span id="infoemail"></span></span></li>
+                    <li><span><h5>🌁Localidad: </h5><span id="infolocalidad"></span></span></li>
+                    <li><span><h5>📅Fecha de nacimiento: </h5><span id="infofechanacimiento"></span></span></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="lado-derecho">
+            <input type="button" value="Mostrar Información"  onclick="showDetails()" /><br /><br /> 
+            <!-- Details -->
+            <div id="Información" style="display: none">          
+            <!-- Educacion -->            
+                <h3 style="margin-top:-10px">Educación</h2><hr/><br>
+                <ul>
+                  <li><span><h5>Primaria en: </h5><span id="infoestudiosprimarios"></span></span></li>
+                  <li><span><h5>Secundaria en: </h5><span id="infoestudiossecundarios"></span></span></li>
+                  <li><span><h5>Estudios univ/terc/cursos: </h5><span id="infoestudiosextras"></span></span></li>
+                </ul>
+            <!-- Experiencia trabajo --> 
+                  <h3 style="margin-top:10px">Experiencia</h2><hr/><br> 
+                  <li><span id="infoexperienciatrabajo"></span></li>
+            <!-- Aptitudes --> 
+                  <h3 style="margin-top:10px">Aptitudes</h2><hr/><br> 
+                  <li><span id="infoaptitudes"></span></li>
+            </div>
+        </div>
+    </div>  
+  <input type="button" value="Fin"  id="botonfincv" style="display: none;"   onclick="alert('Gracias por visitar mi CV')+window.close()">
+</body>
+
+<script>
+document.getElementById('botonenviar').addEventListener('click',function() {
+  let name_surname = document.getElementById("nombre").value; 
+      document.getElementById("nombreapellido").innerHTML = name_surname; 
+  let email = document.getElementById("email").value; 
+      document.getElementById("infoemail").innerHTML = email; 
+  let numberdate = document.getElementById("fechanacimiento").value; 
+      document.getElementById("infofechanacimiento").innerHTML = numberdate;  
+  let numberphone = document.getElementById("numerotelefono").value; 
+      document.getElementById("infotelefono").innerHTML = numberphone;
+  let location = document.getElementById("localidad").value; 
+      document.getElementById("infolocalidad").innerHTML = location; 
+  let estprim = document.getElementById("estudiosprimarios").value; 
+    document.getElementById("infoestudiosprimarios").innerHTML = estprim; 
+  let estsec = document.getElementById("estudiossecundarios").value; 
+    document.getElementById("infoestudiossecundarios").innerHTML = estsec; 
+  let estext = document.getElementById("estudiosextras").value; 
+    document.getElementById("infoestudiosextras").innerHTML = estext; 
+  let explab = document.getElementById("experienciatrabajo").value; 
+    document.getElementById("infoexperienciatrabajo").innerHTML = explab;
+  let apt = document.getElementById("aptitudes").value; 
+    document.getElementById("infoaptitudes").innerHTML = apt;
+});
+const $seleccionArchivos = document.querySelector("#seleccionArchivos"),
+$imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
+$seleccionArchivos.addEventListener("change", () => {
+  const archivos = $seleccionArchivos.files;
+  if (!archivos || !archivos.length) {
+    $imagenPrevisualizacion.src = "";
+    return;
+  }
+  const primerArchivo = archivos[0];
+  const objectURL = URL.createObjectURL(primerArchivo);
+  $imagenPrevisualizacion.src = objectURL;
+});
+</script>
+</html>

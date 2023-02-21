@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    flex-flow: wrap;
+}
+.contenedor{
+    position: block;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 100px;
+    background-color: black;
+    margin: 40px;
+    grid-template-columns: 1fr 1fr;
+}
+.contenedor .lado-izquierdo{
+    background: rgb(37, 223, 176);
+    padding: 10px;
+}
+.contenedor .lado-derecho{
+    position: block;
+    background: rgb(104, 228, 4);
+    padding: 10px;
+}
+.lado-derecho{
+    align-items: center;
+    text-align: center;
+}
+.textoperfil{
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: context-menu;
+    padding: 15px 0px 5px 0px;
+    margin: auto;
+}
+h3{
+    font-family: 'Alike', serif;
+    cursor: context-menu;
+    padding: 0px 0px 5px 0px;
+    text-decoration: underline;
+    margin: auto;
+}
+li{
+    text-align: left;
+    list-style: none;
+}
+ul{
+    padding-left: 0px;
+    text-align: left;
+    display: block;
+}
+ul h3{
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: left;
+    align-content: left;
+    display: block;
+}
+ul span h5{
+    font-size: small;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    display: inline;
+}
+
+ul span{
+    font-size:small;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    display: inline;
+}
+
+.contenedorinfo{
+    display: flex;
+}
+.texto{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: small;
+}
+.imagen{
+    align-items: center;
+    width: 150px;
+    height: auto;
+    border-radius: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type="button" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color:  grey;
+    color: black;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: white;
+    border-image: initial;
+}
+label{
+    font-family: 'Inter', sans-serif;
+    padding: 5px 0px 0px 5px;
+
+}
